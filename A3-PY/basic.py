@@ -13,6 +13,7 @@ print(a * b)  # Multiplication
 print(a / b)  # Division
 print(a % b)  # Modulus
 print(a ** b)  # Exponentiation
+print("// operator 10//3:", 10//3)
 
 
 first_name = "John"
@@ -47,10 +48,12 @@ def greet(name):
 print(greet("Alice"))
 
 #  list are  ordered , mutable collection
-numbers = [1, 2, 3, 4, 5]
-numbers.append(6)  # Add an element
-print(numbers[0])  # Access element
-
+numbers = [5, 1, 7, 6, 10, 5]
+print("numbers", numbers)
+numbers.append(19)  # Add an element
+print("numbers[0]", numbers[0])  # Access element
+print("numbers.pop", numbers.pop(3))  # Remove at index
+print("after pop-numbers", numbers)
 
 person = {"name": "Alice", "age": 30}
 person["age"] = 31  # Update value
@@ -58,7 +61,7 @@ print(person["name"])  # Access value
 
 
 """ 
-lass: A blueprint for creating objects. Classes define a set of attributes and methods that their instances will have.
+class: A blueprint for creating objects. Classes define a set of attributes and methods that their instances will have.
 
 Object: An instance of a class. It is a concrete item in your program.
 

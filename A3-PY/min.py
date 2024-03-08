@@ -1,4 +1,6 @@
 def find_minimum(nums):
+    minimum = float("inf")
+    print(minimum)
     if not nums:  # Check if the list is empty
         return "The list is empty"
 

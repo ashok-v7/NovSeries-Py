@@ -11,3 +11,9 @@ class MyIterable:
 my_iterable = MyIterable()
 for item in my_iterable:
     print(item)
+
+
+'''
+Iterables are objects that can be iterated over, such as lists, tuples, dictionaries, and strings. 
+They implement the __iter__ method, which returns an iterator.
+'''
