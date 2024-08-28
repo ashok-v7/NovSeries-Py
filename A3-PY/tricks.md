@@ -55,3 +55,75 @@ The major difference between the two function is that, both of them return diffe
 Moreover, xrange objects are more useful when we need to build code with minimal space complexity as it takes fairly constant memory size independent of the range of values it stores.
 
 If you want to write a program that can be run or executed on both Python 2 and 3, using the range() method makes more sense and hence is recommended.
+
+# What is a Decorator ?
+
+Decorator is a function that provides a wrapper around another function. This way you can add additional functionality to an already existing code.​
+
+A decorator is a design pattern in Python through which a user can add additional functionality to an existing object without modifying its underlying structure. Decorators are called before the definition of a function you want to decorate.​
+
+So simplistically we can say decorators are functions which modify the functionality of other functions. They make the code more concise and pythonic. ​
+
+# This is the decorated function​
+
+@decorator_function​
+def function_one():​
+{​
+print(“This function needs ​
+to be decorated”)​
+}​
+
+# This is the decorator function​
+
+def decorator_function(func):​
+{​
+print(“This is the decorator function”)​
+
+      print(“This function does some decoration”)​
+
+      return func;​
+
+}​
+
+# Client code​
+
+      function_one()​
+
+# What is an Iterator ?
+
+Iterator in Python is simply an object that can be iterated upon, meaning you can traverse through all the values​
+
+Technically, in Python , an iterator is an object which implements the iterator protocol, which consists of the methods **iter** and **next**​
+
+Iterators are present everywhere in Python. They are elegantly implemented within for loops, comprehensions, generators etc. but it is hidden in plain sight
+
+# What happens if you call the iter() function​
+
+When we call the iter() function on an object, iter function first looks for an **iter**() method of that object​
+If the **iter**() method exists, then iter() function calls **iter**() to get an iterator. Otherwise, the iter() function will look for a **getitem**() method​
+
+If the **getitem**() is present, the iter() function creates an iterator object and returns that object. Otherwise, it raises a TypeError exception​
+
+When both **iter**() and **getitem**() methods exist, the iter() function always uses the **iter**() method:
+
+# What is an iterable
+
+An object is called iterable if we can get an iterator from it. Most built-in containers in Python like list, tuple, set, dictionary and string are iterables​
+
+If you pass an iterable to an iter() function, it returns an iterator. (iter() function in turn calls the**iter**() method)​
+
+The process of traversing the iterable is called as iteration​
+
+# What is an iterable, iterator and iter protocol ​
+
+newlist = ["apple","orange","pineaple"]
+newit = iter(newlist)
+print(next(newit)) # apple
+print(next(newit)) # orange
+print(next(newit)) # pineaple
+
+here newlist is the iterable​
+newit is the iterator​
+iter and next functions form the iter protocol​​
+
+​

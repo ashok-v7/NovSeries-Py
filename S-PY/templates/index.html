@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Form</title>
+</head>
+
+<body>
+    <!-- Subscription Form -->
+    <form id="subscriptionForm">
+        <input type="text" id="mailerGroup" placeholder="Mailer Group">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" id="subscribeButton">Subscribe</button>
+    </form>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            const mailerGroup = document.getElementById('mailerGroup').value;
+            const user = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Construct the POST request with the fetch API
+            fetch('/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    mailer_group: mailerGroup,
+                    user: user,
+                    password: password // Be cautious with handling passwords like this
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    // Handle success (e.g., display a message to the user)
+                    alert('Subscription successful!');
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                    // Handle errors here
+                    alert('Subscription failed!');
+                });
+        });
+    </script>
+</body>
+
+</html>
